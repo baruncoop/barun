@@ -1,228 +1,584 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>오늘만할인 칼마디 1+1 특별할인!</title>
- <style>
- * { margin: 0; padding: 0; box-sizing: border-box; }
- body { 
-     background: #faf9f5; 
-     display: flex; 
-     align-items: center; 
-     justify-content: center; 
-     min-height: 100vh; 
-     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
-     color: #201e1d;
-     line-height: 1.5;
-     padding: 20px;
- }
- .container {
-     width: 100%;
-     max-width: 600px;
-     background: #ffffff;
-     border-radius: 12px;
-     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-     overflow: hidden;
-     border-top: 8px solid #b0250e;
- }
- .header {
-     background: #fff5f3;
-     padding: 20px;
-     text-align: center;
-     border-bottom: 1px solid #eee;
- }
- .header h1 {
-     font-size: 1.3rem;
-     font-weight: 700;
-     color: #b0250e;
-     margin-bottom: 8px;
-     word-break: keep-all;
- }
- .header .sub-title {
-     font-size: 1.1rem;
-     font-weight: 600;
-     color: #333;
- }
- .content {
-     padding: 20px;
-     font-size: 1.0rem;
- }
- .section-box {
-     margin-bottom: 20px;
-     padding: 15px;
-     background: #fdfcf7;
-     border-radius: 8px;
-     border: 1px solid #eae6df;
- }
- .section-box h2 {
-     font-size: 1.1rem;
-     color: #b0250e;
-     margin-bottom: 10px;
-     word-break: keep-all;
- }
- .price-old {
-     text-decoration: line-through;
-     color: #888;
-     font-size: 1rem;
- }
- .price-new {
-     color: #b0250e;
-     font-weight: bold;
-     font-size: 1.1rem;
- }
- .highlight {
-     color: #b0250e;
-     font-weight: bold;
- }
- ul {
-     padding-left: 20px;
-     margin: 10px 0;
- }
- li {
-     margin-bottom: 6px;
-     font-size: 1.0rem;
-     word-break: keep-all;
- }
- p {
-     margin-bottom: 10px;
-     word-break: keep-all;
- }
- .footer {
-     background: #f3f2f2;
-     padding: 15px 20px;
-     text-align: center;
-     font-size: 1.0rem;
-     color: #555;
-     border-top: 1px solid #ddd;
- }
- .footer .contact {
-     font-weight: bold;
-     color: #201e1d;
-     margin-bottom: 5px;
- }
- .footer .reject {
-     font-size: 1.0rem;
-     color: #777;
- }
- </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>(광고) 평촌 산안유정란 4구 증정 및 산지직송 딸기 입고 특가</title>
+<style>
+  body {
+    font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-bottom: 20px;
+  }
+  .header-badge {
+    background-color: #ffca28;
+    color: #2e7d32;
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.0rem;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    margin: 0 0 12px 0;
+    font-size: 1.8em;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .header p {
+    margin: 0;
+    font-size: 1.0rem;
+    line-height: 1.5;
+  }
+
+  /* Section Styles */
+  .section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+  }
+  .section.yellow-theme {
+    background-color: #fffdf5;
+    border: 1px solid #ffecb3;
+  }
+  .section.green-theme {
+    background-color: #f4fbf4;
+    border: 1px solid #a5d6a7;
+  }
+  .section.pink-theme {
+    background-color: #fcf4f6;
+    border: 1px solid #f8bbd0;
+  }
+  
+  .section-title {
+    font-size: 1.2em;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .yellow-theme .section-title {
+    color: #f57f17;
+    border-bottom: 2px solid #ffca28;
+  }
+  .grey-theme .section-title {
+    color: #2e7d32;
+    border-bottom: 2px solid #a5d6a7;
+  }
+  .green-theme .section-title {
+    color: #1b5e20;
+    border-bottom: 2px solid #a5d6a7;
+  }
+  .pink-theme .section-title {
+    color: #c2185b;
+    border-bottom: 2px solid #f48fb1;
+  }
+  
+  .coupon-badge {
+    background-color: #e53935;
+    color: white;
+    font-size: 1.0rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+  
+  .sub-banner {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 15px 0 10px 0;
+    font-size: 1.0rem;
+    text-align: left;
+  }
+
+  /* List Styles */
+  .item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed #e0e0e0;
+  }
+  .item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .item:first-child {
+    padding-top: 0;
+  }
+  
+  .item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-right: 10px;
+  }
+  .item-name {
+    font-weight: bold;
+    font-size: 1.05em;
+    display: flex;
+    align-items: center;
+    word-break: keep-all;
+  }
+  .yellow-theme .item-name::before {
+    content: "♣";
+    margin-right: 6px;
+    color: #f57f17;
+  }
+  .grey-theme .item-name::before {
+    content: "◆";
+    margin-right: 6px;
+    color: #2e7d32;
+  }
+  .green-theme .item-name::before {
+    content: "◈";
+    margin-right: 6px;
+    color: #1b5e20;
+  }
+  .pink-theme .item-name::before {
+    content: "◆";
+    margin-right: 6px;
+    color: #c2185b;
+  }
+  .no-icon .item-name::before {
+    content: none !important;
+  }
+  
+  .limit-badge {
+    background-color: #ffebee;
+    color: #c62828;
+    font-size: 1.0rem;
+    padding: 2px 6px;
+    border: 1px solid #ffcdd2;
+    border-radius: 4px;
+    display: inline-block;
+    width: fit-content;
+  }
+  
+  .price-box {
+    text-align: right;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .original-price {
+    text-decoration: line-through;
+    color: #9e9e9e;
+    font-size: 1.1em; 
+  }
+  .sale-price {
+    color: #d32f2f;
+    font-size: 1.25em;
+    font-weight: 800;
+  }
+  .green-price {
+    color: #2e7d32;
+    font-size: 1.25em;
+    font-weight: 800;
+  }
+
+  /* Notice Box */
+  .notice-box {
+    background-color: #fff3e0;
+    border: 1px solid #ffe0b2;
+    color: #e65100;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1.0rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 20px 10px;
+    color: #555;
+    font-size: 1.0rem;
+    background-color: #ffffff;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+  }
+  .order-box {
+    background-color: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    color: #1b5e20;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .order-box a {
+    color: #1b5e20;
+    text-decoration: underline;
+  }
+  .footer-phone {
+    font-weight: bold;
+    font-size: 1.05em;
+    margin-bottom: 5px;
+  }
+  .footer-phone a {
+    color: #d32f2f;
+    text-decoration: none;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 480px) {
+    .header h1 {
+      font-size: 1.5em;
+    }
+    .item-name {
+      font-size: 0.95em;
+    }
+    .sale-price, .green-price {
+      font-size: 1.15em;
+    }
+    .original-price {
+      font-size: 1.1em;
+    }
+    .price-box {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+    .order-box {
+      font-size: 1em;
+    }
+  }
+</style>
 </head>
 <body>
 
- <div class="container">
-     <div class="header">
-         <h1>오늘만할인 칼마디 1+1 특별할인! 선착순마감예정!</h1>
-         <div class="sub-title">[Web발신] 광고) 바른평촌</div>
-     </div>
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <div class="header-badge">(광고) 평촌</div>
+    <h1>산안유정란 4구 증정! 선착순 행사</h1>
+    <p>산지직송 딸기 입고 및 신선 특가 할인</p>
+  </div>
 
-     <div class="content">
-         <p><strong>평촌점만의 특별할인! 오늘 단하루!!</strong></p>
-         
-         <div class="section-box">
-             <h2>뼈건강 최적의 조합</h2>
-             <p><strong>■ 뼈건강 플러스 칼마디+K</strong><br>
-             (칼슘+마그네슘+비타민D, K)</p>
-             <p><span class="price-old">86,000원</span> &rarr; <span class="price-new">27,500원</span></p>
-             <p class="highlight">(♥ 오늘만! 1+1, 하나+하나)</p>
-             <p>※ 15세트 한정수량</p>
-         </div>
+  <!-- 상단 이벤트 안내 섹션 -->
+  <div class="section yellow-theme">
+    <div class="section-title">
+      🥚 오늘 3만원 이상 구매시 혜택! <span class="coupon-badge">선착순</span>
+    </div>
+    <div class="sub-banner">
+      ☞ 산안유정란 4구 증정 (선착순 40개 한정)
+    </div>
+  </div>
 
-         <div class="section-box">
-             <h2>☎ 특별예약중 ☎</h2>
-             <p><strong>★★ 심봤다♬!! ★★</strong><br>
-             지금이 딱 드실 최적기!!<br>
-             한뿌리에 담긴 강인한 저항력♬ 우리몸에 심으세요!!</p>
-             <p><strong>봄 가을에 꼭 드세요!!</strong></p>
-             <p>♥ 무농약 산양산삼 ∼∼<br>
-             (씨삼: 한자리에서 12년 자람)</p>
-             <p><strong>11~12년근 5뿌리</strong><br>
-             <span class="price-old">400,000원</span> &rarr; <span class="price-new">280,000원</span></p>
-             
-             <p><strong>강인한 생명력과 저항력으로 자란 씨삼</strong></p>
-             <ul>
-                 <li>♣ 보기구탈 - 원기회복</li>
-                 <li>♣ 양심안신 - 심장튼튼 정신편안</li>
-                 <li>♣ 생진지갈 - 체액을 생성 갈증없앰</li>
-                 <li>♣ 보폐정서 - 폐를 보호 숨을 고르게</li>
-                 <li>♣ 건비지사 - 비장 기운을 돕고 설사가 멈춤</li>
-                 <li>♣ 익혈복맥 - 혈액생성을 돕고, 맥박정상화</li>
-                 <li>♣ 탁독합창 - 독소를 배출하고 피부병을 낫게한다</li>
-             </ul>
-             <p style="font-size:0.95rem; color:#666;">(출처) 동의보감 산삼의 효능</p>
-             <p>※ 입고시 연락드립니다.<br>
-             <span class="highlight">10개 한정!!! 사전예약필수!!</span></p>
-         </div>
+  <!-- Section 1: 가자미, 떡, 신선 과일/채소 -->
+  <div class="section yellow-theme">
+    <div class="section-title">
+      🐟 깔끔! 담백한 흰살생선 & 달콤 간식·과일
+    </div>
+    <ul class="item-list">
+      <li class="item">
+        <div class="item-info">
+          <span class="item-name">손질생물가자미 (2미)</span>
+          <span class="limit-badge">※ 3개 한정</span>
+        </div>
+        <div class="price-box">
+          <span class="sale-price">13,200원</span>
+        </div>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <span class="item-name">밤콩찰떡 (3개, 개별포장)</span>
+          <span class="limit-badge">※ 50개 한정</span>
+        </div>
+        <div class="price-box">
+          <span class="sale-price">3,500원</span>
+        </div>
+      </li>
+    </ul>
+    <div class="notice-box" style="margin-top: 15px; margin-bottom: 15px;">
+      💡 무농약찹쌀에 서리태, 밤을 알차게 넣어 담백하고 깊은 맛~!! 냉동보관해서 드셔도 좋아요!
+    </div>
+    <ul class="item-list">
+      <li class="item">
+        <div class="item-info">
+          <span class="item-name">친환경딸기 1kg (새벽 직송)</span>
+          <span class="limit-badge">※ 30개 한정</span>
+        </div>
+        <div class="price-box">
+          <span class="original-price">22,000원</span>
+          <span class="sale-price">15,200원</span>
+        </div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">대저토마토</span></div>
+        <div class="price-box"><span class="sale-price">10,900원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">참외</span></div>
+        <div class="price-box"><span class="sale-price">18,900원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">방울토마토</span></div>
+        <div class="price-box"><span class="sale-price">6,600원</span></div>
+      </li>
+    </ul>
+  </div>
 
-         <div class="section-box">
-             <h2>오랜만에 구이류도 입고♬</h2>
-             <p>제주보다 저렴한 가격!! 기름까지 고소함 가득!!</p>
-             <p><strong>★ 흑돼지 (오겹살 / 400g)</strong><br>
-             특별가 &rarr; <span class="price-new">21,900원</span></p>
-             <p><strong>★ 흑돼지 (목살 / 400g)</strong><br>
-             특별가 &rarr; <span class="price-new">21,900원</span></p>
-             <p><strong>★ 흑돼지 (수육용 / 600g)</strong><br>
-             특별가 &rarr; <span class="price-new">13,900원</span></p>
-             <p><strong>★ 흑돼지 (불고기용 / 500g)</strong><br>
-             특별가 &rarr; <span class="price-new">7,500원</span></p>
-             <p>※ 3/23(목) 입고</p>
-         </div>
+  <!-- Section 2: 제주토종흑돼지 & 신선 채소 -->
+  <div class="section green-theme">
+    <div class="section-title">
+      🥩 제주토종흑돼지 & 신선 채소
+    </div>
+    <div class="sub-banner">
+      ☞ 기름까지 고소해요~ 쫄깃쫄깃 구이 강추! (※ 예약분 외 잔여수량만!)
+    </div>
+    <ul class="item-list">
+      <li class="item">
+        <div class="item-info"><span class="item-name">오겹살 (400g)</span></div>
+        <div class="price-box"><span class="sale-price">21,900원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">목살 (400g)</span></div>
+        <div class="price-box"><span class="sale-price">21,900원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">수육&찌개 (600g)</span></div>
+        <div class="price-box"><span class="sale-price">13,900원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">불고기 (500g)</span></div>
+        <div class="price-box"><span class="sale-price">7,500원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">양배추</span><span class="limit-badge">※ 각 한정</span></div>
+        <div class="price-box"><span class="sale-price">1,000원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">쌈모음</span><span class="limit-badge">※ 각 한정</span></div>
+        <div class="price-box"><span class="sale-price">1,900원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">쌈케일</span><span class="limit-badge">※ 각 한정</span></div>
+        <div class="price-box"><span class="sale-price">1,050원</span></div>
+      </li>
+    </ul>
+  </div>
 
-         <div class="section-box">
-             <h2>흑돼지와 함께 환상의 조합!!</h2>
-             <p>야들야들 부드러운 봄! 쪽파로!</p>
-             <p><strong>♣ 갓! 담근 여수 파김치 1kg</strong><br>
-             특별가 &rarr; <span class="price-new">14,900원</span></p>
-             <p>※ 3/23(목) 딱 15개만!!</p>
-         </div>
+  <!-- Section 3: 홍성한우, 참송이버섯, 김치, 생닭, 데친나물 -->
+  <div class="section grey-theme">
+    <div class="section-title">
+      🐂 무항생제 1등급(암소) 홍성한우 & 명품 반찬류
+    </div>
+    <div class="sub-banner">
+      ☞ 시중 가격 비교 필수! (※ 한우류는 예약분 외 잔여수량만 판매)
+    </div>
+    <ul class="item-list">
+      <li class="item">
+        <div class="item-info"><span class="item-name">양지국거리 (300g) - 1팩</span></div>
+        <div class="price-box"><span class="original-price">36,800원</span><span class="sale-price">18,800원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">양지국거리 (300g) - 2팩</span></div>
+        <div class="price-box"><span class="original-price">73,600원</span><span class="sale-price">31,000원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">채끝구이 (300g) - 1팩</span></div>
+        <div class="price-box"><span class="original-price">46,400원</span><span class="sale-price">28,600원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">채끝구이 (300g) - 2팩</span></div>
+        <div class="price-box"><span class="original-price">92,800원</span><span class="sale-price">45,800원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">안심구이 (300g)</span></div>
+        <div class="price-box"><span class="original-price">58,400원</span><span class="sale-price">30,900원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">특수부위 (300g)</span></div>
+        <div class="price-box"><span class="original-price">58,400원</span><span class="sale-price">34,500원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">불고기 (1kg)</span></div>
+        <div class="price-box"><span class="original-price">64,000원</span><span class="sale-price">39,000원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">참송이버섯</span><span class="limit-badge">※ 20개</span></div>
+        <div class="price-box"><span class="sale-price">9,900원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">여수파김치</span><span class="limit-badge">※ 20개</span></div>
+        <div class="price-box"><span class="sale-price">14,900원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">열무김치</span><span class="limit-badge">※ 30개</span></div>
+        <div class="price-box"><span class="original-price">7,000원</span><span class="sale-price">6,600원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">총각김치</span></div>
+        <div class="price-box"><span class="original-price">9,400원</span><span class="sale-price">8,200원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">포기김치</span></div>
+        <div class="price-box"><span class="original-price">14,000원</span><span class="sale-price">12,600원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">생통닭</span><span class="limit-badge">※ 각 4개</span></div>
+        <div class="price-box"><span class="original-price">9,000원</span><span class="sale-price">8,100원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">생토막닭</span><span class="limit-badge">※ 각 4개</span></div>
+        <div class="price-box"><span class="original-price">9,500원</span><span class="sale-price">8,600원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">취나물 (생데친나물)</span></div>
+        <div class="price-box"><span class="sale-price">4,200원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">방풍나물 (생데친나물)</span></div>
+        <div class="price-box"><span class="sale-price">5,900원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">참나물 (생데친나물)</span></div>
+        <div class="price-box"><span class="sale-price">3,800원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">얼갈이 (생데친나물)</span></div>
+        <div class="price-box"><span class="sale-price">2,900원</span></div>
+      </li>
+    </ul>
+  </div>
 
-         <div class="section-box">
-             <h2>새벽직송! 홍성한우</h2>
-             <p>무항생제 1등급 암소!!</p>
-             <p><strong>♣ 꽃등심구이 / 채끝로스</strong><br>
-             1팩 <span class="price-old">46,400원</span> &rarr; <span class="price-new">28,600원</span><br>
-             2팩 <span class="price-old">92,800원</span> &rarr; <span class="price-new">45,800원</span><br>
-             <span class="highlight">※ 딱! 5세트 한정수량</span></p>
-             
-             <p><strong>♣ 안심구이</strong><br>
-             <span class="price-old">58,400원</span> &rarr; <span class="price-new">30,900원</span></p>
-             
-             <p><strong>♣ 특수부위</strong><br>
-             <span class="price-old">58,400원</span> &rarr; <span class="price-new">34,500원</span></p>
-             
-             <p><strong>♣ 양지국거리</strong><br>
-             1팩 <span class="price-old">36,800원</span> &rarr; <span class="price-new">18,800원</span><br>
-             2팩 <span class="price-old">73,600원</span> &rarr; <span class="price-new">31,000원</span></p>
-             
-             <p><strong>♣ 한우불고기 1kg</strong><br>
-             <span class="price-old">64,000원</span> &rarr; <span class="price-new">39,000원</span><br>
-             ※ 3/23(목)</p>
-         </div>
+  <!-- Section 4: 수산물 20% 즉시 할인 -->
+  <div class="section grey-theme">
+    <div class="section-title">
+      🐟 수산물 20% 즉시 할인 (조합원 누구나 / 오늘·내일 2일간)
+    </div>
+    <ul class="item-list">
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">마른오징어채</span></div>
+        <div class="price-box"><span class="original-price">15,800원</span><span class="sale-price">12,640원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">오징어 (1kg)</span></div>
+        <div class="price-box"><span class="original-price">21,000원</span><span class="sale-price">17,200원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">손질오징어채</span></div>
+        <div class="price-box"><span class="original-price">9,500원</span><span class="sale-price">7,600원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">채썬갑오징어</span></div>
+        <div class="price-box"><span class="original-price">5,900원</span><span class="sale-price">4,720원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">순살고등어</span></div>
+        <div class="price-box"><span class="original-price">17,500원</span><span class="sale-price">14,000원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">안동간고등어</span></div>
+        <div class="price-box"><span class="original-price">5,400원</span><span class="sale-price">3,160원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">황태머리</span></div>
+        <div class="price-box"><span class="original-price">6,600원</span><span class="sale-price">5,280원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">반건조명태찜</span></div>
+        <div class="price-box"><span class="original-price">3,950원</span><span class="sale-price">3,160원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">동태전 (1kg)</span></div>
+        <div class="price-box"><span class="original-price">15,000원</span><span class="sale-price">12,000원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">동태전 (400g)</span></div>
+        <div class="price-box"><span class="original-price">8,300원</span><span class="sale-price">6,640원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">손질동태</span></div>
+        <div class="price-box"><span class="original-price">6,300원</span><span class="sale-price">5,040원</span></div>
+      </li>
+      <li class="item no-icon">
+        <div class="item-info"><span class="item-name">손질코다리</span></div>
+        <div class="price-box"><span class="original-price">7,800원</span><span class="sale-price">6,240원</span></div>
+      </li>
+    </ul>
+  </div>
 
-         <div class="section-box">
-             <h2>통영 새벽직송!!</h2>
-             <p>살이 통통!! 원기뿜뿜</p>
-             <p><strong>♣ 생물주꾸미 800g</strong><br>
-             <span class="price-old">46,000원</span> &rarr; <span class="price-new">29,900원</span><br>
-             ※ 3/23(목) 10개 한정</p>
-             
-             <p><strong>♣ 국산홍어 (중간숙성)</strong><br>
-             <span class="price-old">37,800원</span> &rarr; <span class="price-new">30,500원</span><br>
-             ※ 3/24(금) ※ 6개 한정</p>
-         </div>
+  <!-- Section 5: 양치소금 & 흑염소엑기스 -->
+  <div class="section pink-theme">
+    <div class="section-title">
+      ✨ 건강 특가 및 선착순 한정 할인
+    </div>
+    <ul class="item-list">
+      <li class="item">
+        <div class="item-info"><span class="item-name">소나무로 구운 양치소금</span></div>
+        <div class="price-box"><span class="sale-price">7,000원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info"><span class="item-name">무항생제 흑염소엑기스 (1박스)</span></div>
+        <div class="price-box"><span class="sale-price">116,000원</span></div>
+      </li>
+      <li class="item">
+        <div class="item-info">
+          <span class="item-name">무항생제 흑염소엑기스 (4박스 / 한마리)</span>
+          <span class="limit-badge">매장재고 2세트만 할인! 선착순!!</span>
+        </div>
+        <div class="price-box">
+          <span class="original-price">464,000원</span>
+          <span class="sale-price">417,600원</span>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-         <div class="section-box">
-             <h2>깔끔! 단백한 흰살생선!!</h2>
-             <p><strong>♣ 손질생물가자미 450g / 2미</strong><br>
-             특별가 &rarr; <span class="price-new">13,200원</span><br>
-             ※ 3/22(수) ※ 8개 한정</p>
-         </div>
-     </div>
+  <!-- Footer -->
+  <div class="footer">
+    <!-- 전화주문 바로가기 박스 -->
+    <div class="order-box">
+      📞 <a href="tel:010-8214-8185">평촌점 문자/카톡 주문 010-8214-8185</a>
+    </div>
 
-     <div class="footer">
-         <div class="contact">문자, 카톡 주문: 010-8214-8185</div>
-         <div class="reject">수신거부: 080-863-8493</div>
-     </div>
- </div>
+    <!-- 수신거부 전화 연결 -->
+    <div class="footer-phone">
+      <a href="tel:080-863-8493">거부 080-863-8493</a>
+    </div>
+    <div>[Web발신] (광고) 평촌 산안유정란 4구 증정 행사</div>
+  </div>
+
+</div>
 
 </body>
 </html>
